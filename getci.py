@@ -197,4 +197,3 @@ if __name__ == "__main__":
                 json.dump(system_info_all, f, indent=4)
 
             print("System information saved to {}".format(output_file))
-

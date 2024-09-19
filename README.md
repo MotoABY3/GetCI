@@ -144,4 +144,3 @@ The output is saved as a JSON file. Here is an example of the structure:
 - Incomplete Information:
  - Some commands might not return data if the necessary packages or permissions are missing on the target server. Ensure the required system utilities (e.g., dmidecode, lscpu) are installed.
 
-
