@@ -14,7 +14,6 @@ This project provides a Python script that retrieves system information from mul
 - [Configuration](#configuration)
 - [Output Format](#output-format)
 - [Troubleshooting](#troubleshooting)
-- [License](#license)
 
 ## Features
 
