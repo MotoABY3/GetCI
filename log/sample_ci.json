@@ -1,0 +1,38 @@
+{
+  "192.168.1.10": {
+    "Server": {
+      "hostname": "example-host",
+      "linux_version": "Ubuntu 20.04.1 LTS",
+      "cpu_size": "4",
+      "memory_size": "7.8G",
+      "disk_info": [
+        {
+          "filesystem": "/dev/sda1",
+          "size": "50G",
+          "used": "25G",
+          "available": "23G",
+          "used_percentage": "50%",
+          "mount_point": "/"
+        }
+      ],
+      "network_info": [
+        {
+          "interface": "eth0",
+          "ip_address": "192.168.1.10",
+          "mac_address": "00:0c:29:16:f9:b9",
+        }
+      ],
+      "uuid": "52A936E5-F3ED-11DF-ADC1-AAABBCCDDEE0",
+      "installed_software": [
+        "bash-4.3.30-2.fc20.x86_64",
+        "openssl-1.0.1e-42.el7.x86_64"
+      ]
+    },
+    "Hardware": {
+      "hardware_manufacturer": "Dell Inc.",
+      "hardware_model": "PowerEdge R640",
+      "cpu_vendor": "Intel",
+      "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz"
+    }
+  }
+}
