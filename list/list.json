@@ -1,0 +1,14 @@
+[
+    {
+        "no": "1",
+        "ip": "192.168.0.1",
+        "user": "ci-user",
+        "password": "password"
+    },
+    {
+        "no": "2",
+        "ip": "192.168.0.2",
+        "user": "ci-user",
+        "password": "password"
+    }
+]
