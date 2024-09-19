@@ -135,13 +135,13 @@ The output is saved as a JSON file. Here is an example of the structure:
 ```
 ## Troubleshooting
 ### Common Issues and Fixes
-SSH Connection Fails:
-Ensure the credentials (username and password) are correct.
-Verify that the server is accessible from your network.
-Check if the target server allows SSH connections on the default port (22) or modify the script to use a custom port.
-Permission Denied Errors:
-Ensure the user has sufficient privileges to execute system commands on the server.
-Incomplete Information:
-Some commands might not return data if the necessary packages or permissions are missing on the target server. Ensure the required system utilities (e.g., dmidecode, lscpu) are installed.
+- SSH Connection Fails:
+ - Ensure the credentials (username and password) are correct.
+ - Verify that the server is accessible from your network.
+ - Check if the target server allows SSH connections on the default port (22) or modify the script to use a custom port.
+- Permission Denied Errors:
+ - Ensure the user has sufficient privileges to execute system commands on the server.
+- Incomplete Information:
+ - Some commands might not return data if the necessary packages or permissions are missing on the target server. Ensure the required system utilities (e.g., dmidecode, lscpu) are installed.
 
 
