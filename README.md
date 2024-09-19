@@ -26,7 +26,7 @@ This project provides a Python script that retrieves system information from mul
   - Memory size
   - Disk usage per partition
   - Network interface details, including IP addresses and MAC addresses
-  - Installed software (on RPM-based systems)
+  - Installed software
 - Output the collected information in JSON format for easy integration with configuration management tools (e.g., Ansible, Puppet) or audits.
 - Supports retry mechanisms for SSH connections in case of temporary network issues.
 - Compatible with Python 2.7.
@@ -65,10 +65,24 @@ python your_script.py
 This will execute the script and retrieve system information from the specified servers, storing the results in a JSON file. Each execution will generate a new JSON file with a name like system_info_YYYYMMDD.json, where YYYYMMDD corresponds to the current date.
 
 ### Command-line Execution Example
-Here’s how to run the script after defining your servers:
-```python
-servers = ["192.168.1.10", "192.168.1.11", "192.168.1.12"]
-check_multiple_systems(servers, "your_user", "your_password", ".")
+After defining the server, update list/list.json when running the script.
+Enter the IP address, user, and password in json format.
+*It is not recommended to store passwords in plain text. Consider non-password authentication using a private key or password hashing.
+```json
+[
+    {
+        "no": "1",
+        "ip": "192.168.0.1",
+        "user": "ci-user",
+        "password": "password"
+    },
+    {
+        "no": "2",
+        "ip": "192.168.0.2",
+        "user": "ci-user",
+        "password": "password"
+    }
+]
 ```
 This will connect to the provided servers via SSH, collect the necessary system information, and save it in a JSON file.
 
@@ -79,13 +93,10 @@ You can customize the script to meet specific needs, such as:
 - Changing the output format: The script currently saves data in JSON format. If you need a different format (e.g., CSV, XML), you can modify the output section of the script.
 - Adjusting the retry mechanism: The script includes a retry mechanism to handle SSH connection issues. You can modify the number of retries or the delay between retries in the get_system_info() function.
 - Adding or removing information: If you want to collect additional information (e.g., running processes, open ports), you can add more commands to the script.
-### Adding More Servers
-To add more servers to the script, simply extend the servers list with the additional IP addresses:
-```python
-servers = ["192.168.1.10", "192.168.1.11", "192.168.1.12", "192.168.1.13"]
-```
+
 ### Credentials
 Make sure the SSH credentials you are using have sufficient privileges to run system-level commands on the target servers.
+Some options require sudo privileges.
 
 ## Output Format
 The output is saved as a JSON file. Here is an example of the structure:
@@ -112,7 +123,6 @@ The output is saved as a JSON file. Here is an example of the structure:
           "interface": "eth0",
           "ip_address": "192.168.1.10",
           "mac_address": "00:0c:29:16:f9:b9",
-          "opposing_mac": "00:0c:29:43:ad:ac"
         }
       ],
       "uuid": "52A936E5-F3ED-11DF-ADC1-AAABBCCDDEE0",
@@ -125,8 +135,6 @@ The output is saved as a JSON file. Here is an example of the structure:
     "Hardware": {
       "hardware_manufacturer": "Dell Inc.",
       "hardware_model": "PowerEdge R640",
-      "disk_controller": "SATA controller: Intel Corporation C610/X99 series",
-      "raid_info": "RAID 1",
       "cpu_vendor": "Intel",
       "cpu_model": "Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz"
     }
