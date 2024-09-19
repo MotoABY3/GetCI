@@ -76,23 +76,21 @@ This will connect to the provided servers via SSH, collect the necessary system 
 ### Modifying the Script for Customization
 You can customize the script to meet specific needs, such as:
 
-Changing the output format: The script currently saves data in JSON format. If you need a different format (e.g., CSV, XML), you can modify the output section of the script.
-Adjusting the retry mechanism: The script includes a retry mechanism to handle SSH connection issues. You can modify the number of retries or the delay between retries in the get_system_info() function.
-Adding or removing information: If you want to collect additional information (e.g., running processes, open ports), you can add more commands to the script.
-Adding More Servers
+- Changing the output format: The script currently saves data in JSON format. If you need a different format (e.g., CSV, XML), you can modify the output section of the script.
+- Adjusting the retry mechanism: The script includes a retry mechanism to handle SSH connection issues. You can modify the number of retries or the delay between retries in the get_system_info() function.
+- Adding or removing information: If you want to collect additional information (e.g., running processes, open ports), you can add more commands to the script.
+### Adding More Servers
 To add more servers to the script, simply extend the servers list with the additional IP addresses:
-
-python
-コードをコピーする
+```python
 servers = ["192.168.1.10", "192.168.1.11", "192.168.1.12", "192.168.1.13"]
-Credentials
+```
+### Credentials
 Make sure the SSH credentials you are using have sufficient privileges to run system-level commands on the target servers.
 
-Output Format
+## Output Format
 The output is saved as a JSON file. Here is an example of the structure:
 
-json
-コードをコピーする
+```json
 {
   "192.168.1.10": {
     "Server": {
@@ -134,8 +132,9 @@ json
     }
   }
 }
-Troubleshooting
-Common Issues and Fixes
+```
+## Troubleshooting
+### Common Issues and Fixes
 SSH Connection Fails:
 Ensure the credentials (username and password) are correct.
 Verify that the server is accessible from your network.
