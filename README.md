@@ -64,7 +64,7 @@ python your_script.py
 ```
 This will execute the script and retrieve system information from the specified servers, storing the results in a JSON file. Each execution will generate a new JSON file with a name like system_info_YYYYMMDD.json, where YYYYMMDD corresponds to the current date.
 
-# Command-line Execution Example
+### Command-line Execution Example
 Here’s how to run the script after defining your servers:
 ```python
 servers = ["192.168.1.10", "192.168.1.11", "192.168.1.12"]
@@ -73,7 +73,7 @@ check_multiple_systems(servers, "your_user", "your_password", ".")
 This will connect to the provided servers via SSH, collect the necessary system information, and save it in a JSON file.
 
 ## Configuration
-# Modifying the Script for Customization
+### Modifying the Script for Customization
 You can customize the script to meet specific needs, such as:
 
 Changing the output format: The script currently saves data in JSON format. If you need a different format (e.g., CSV, XML), you can modify the output section of the script.
